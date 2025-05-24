@@ -1,8 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { ShoppingCartIcon } from "lucide-react";
+import { ShoppingBag } from "lucide-react";
+import ThemeSelector from "./ThemeSelector";
 
 const NavBar = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   return (
     <div className="bg-base-100/80 backdrop-blur-lg border-b border-base-conten/10 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto">
@@ -20,6 +25,21 @@ const NavBar = () => {
                 </span>
               </div>
             </Link>
+          </div>
+
+          <div className="flex items-centered gap-4">
+            <ThemeSelector />
+
+            {isHomePage && (
+              <div className="indicator">
+                <div className="p-2 rounded-full hover:bg-base-200 transition-colors">
+                  <ShoppingBag className="size-5" />
+                  <span className="badge badge-sm badge-primary indicator-item">
+                    8
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>

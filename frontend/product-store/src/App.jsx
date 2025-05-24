@@ -1,7 +1,7 @@
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-
+import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
