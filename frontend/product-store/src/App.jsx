@@ -1,13 +1,14 @@
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ProductPage from "./pages/ProductPage";
-import { useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useThemeStore } from "./store/useThemeStore";
 function App() {
+  const { theme } = useThemeStore();
   return (
     <div
       className="min-h-screen bg-base-200 transition-colors duration-300"
-      data-theme="forest"
+      data-theme={theme}
     >
       <NavBar />
 

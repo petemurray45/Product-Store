@@ -1,9 +1,11 @@
 import { PaletteIcon } from "lucide-react";
 import { THEMES } from "../constants";
 import React from "react";
+import { useThemeStore } from "../store/useThemeStore";
 
 function ThemeSelector() {
-  const theme = "forest";
+  const { theme, setTheme } = useThemeStore();
+  console.log(theme);
   return (
     <div className="dropdown dropdown-end">
       {/*Dropdown Trigger*/}
