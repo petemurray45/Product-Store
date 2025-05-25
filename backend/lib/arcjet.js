@@ -1,9 +1,9 @@
 import arcjet, { tokenBucket, shield, detectBot } from "@arcjet/node";
-import "dotenc/config";
+import "dotenv/config";
 
 // initialise the arcjet client
 
-export const arcjet = arcjet({
+export const aj = arcjet({
   key: process.env.ARCJET_KEY,
   characteristics: ["ip.src"],
   rules: [
